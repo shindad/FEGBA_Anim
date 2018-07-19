@@ -4,7 +4,7 @@
 var swordD = false, lanceD = false, axeD = false, bowD = false, cavD = false, flyD = false, lordD = false, mageD = false, monsterD = false, dancerD = false, spellD = false;
 
 //Global Variables that control which classes load new html data from JS or not
-var assD = false;
+var assD = false, heroD = false, mercD = false, myrmD = false, rogueD = false, swmD = false;
 
 //Global Variable that contains the base pathway that all images follow
 var imgPath = "feugit/assets/images/";
@@ -48,62 +48,6 @@ function Anim(feClass, URL, dlName) {
 
 ///FUNCTIONS///
 
-//Builds the images and downloader info for each animation
-function makeCard(feClass, URL, dlName) {
-    var colDiv = $("<div>");
-    colDiv.addClass("col-md-4 col-sm-6 col-12");
-
-    var animImg = $("<img>");
-    animImg.addClass("gif");
-    animImg.attr({
-        src: URL + ".png",
-        "data-state": "still",
-        "data-animate": URL + ".gif",
-        "data-still": URL + ".png"
-    });
-
-    var animName = $("<a>");
-    animName.addClass("animName");
-    animName.html(feClass);
-    animName.attr({
-        href: URL + ".7z",
-        download: dlName
-    });
-
-    colDiv.append(animImg, "<br>", animName);
-    return colDiv;
-};
-
-//When clicked, builds the Assassin gif section.
-//The bottom half will be called with another function later as it is reusable.
-function assfiller() {
-    //initialize temporary path for calling all assassin animations
-    var assPath = imgPath + "swords/assassin/";
-
-    var assassins = [
-        assFGT = new Anim("Assassin F GreenTea", assPath + "f_gt", "Assassin_F_GRT.7z"),
-        assFHL = new Anim("Assassin F Hoodless Skirt", assPath + "f_hl_pony", "Assassin_F_Skirt.7z"),
-        assPPY = new Anim("Assassin F Pants Ponytail", assPath + "f_pants_pony", "Assassin_F_Pants.7z"),
-        assMHL = new Anim("Assassin M Hoodless+Bow", assPath + "m_hl_b", "Assassin_M_HL.7z"),
-        assMJGT = new Anim("Assassin Jaffar Greentea", assPath + "m_jaf_gt", "Assassin_Jaff_GRT.7z"),
-        assMJSH = new Anim("Assassin Jaffar Shirt+Bow", assPath + "m_jaf_sh_b", "Assassin_Jaff_Shirt_Bow.7z"),
-        assMJCSA = new Anim("Assassin Jaffar CSAFix+Bow", assPath + "m_jaf_csa_b", "Assassin_Jaff_CSAfix_Bow.7z"),
-        assMJO = new Anim("Assassin Jojaffar", assPath + "m_jaf_jojo", "Assassin Jojaffar.7z"),
-        assMJOG = new Anim("Assassin Jaffar Rip+Bow", assPath + "m_jaf_og_b", "Assassin_Jaff_Rip_Bow.7z"),
-        assML = new Anim("Assassin Legault", assPath + "m_leg", "Assassin_Legault.7z"),
-        assMMGT = new Anim("Assassin Matthew Greentea", assPath + "m_mat_gt", "Assassin_Matt_GRT.7z")
-    ];
-
-    var fRow = $("<div>");
-    fRow.addClass("row assRow")
-
-    for (var i = 0; i < assassins.length; i++) {
-        fRow.append(assassins[i].makeCard());
-    };
-
-    $("#swordFill").append(fRow);
-};
-
 //Builds the list of clickable buttons made from clicking class types
 function animOptions(classList, headerName, filledDiv) {
 
@@ -131,6 +75,163 @@ function animOptions(classList, headerName, filledDiv) {
     $(filledDiv).append(rowDiv);
 };
 
+//Builds the images and downloader info for each animation
+function makeCard(feClass, URL, dlName) {
+    var colDiv = $("<div>");
+    colDiv.addClass("col-md-4 col-sm-6 col-12");
+
+    var animImg = $("<img>");
+    animImg.addClass("gif");
+    animImg.attr({
+        src: URL + ".png",
+        "data-state": "still",
+        "data-animate": URL + ".gif",
+        "data-still": URL + ".png"
+    });
+
+    var animName = $("<a>");
+    animName.addClass("animName");
+    animName.html(feClass);
+    animName.attr({
+        href: URL + ".7z",
+        download: dlName
+    });
+
+    colDiv.append(animImg, "<br>", animName);
+    return colDiv;
+};
+
+//Handles the final part of animation filler sections
+function fillerTail(header, row, clArr, divIns) {
+    var fRow = $("<div>");
+    fRow.addClass("row centerText " + row);
+
+    var headerDiv = $("<div>");
+    headerDiv.html(header);
+    headerDiv.addClass("col-12 centerText " + row);
+
+    for (var i = 0; i < clArr.length; i++) {
+        fRow.append(clArr[i].makeCard());
+    };
+
+    $(divIns).append(headerDiv, fRow);
+};
+
+//When clicked, builds the Assassin gif section.
+//The bottom half will be called with another function later as it is reusable.
+function assfiller() {
+    //initialize temporary path for calling all assassin animations
+    var assPath = imgPath + "swords/assassin/";
+
+    var assassins = [
+        assFGT = new Anim("Assassin F GreenTea", assPath + "f_gt", "Assassin_F_GRT.7z"),
+        assFHL = new Anim("Assassin F Hoodless Skirt", assPath + "f_hl_pony", "Assassin_F_Skirt.7z"),
+        assPPY = new Anim("Assassin F Pants Ponytail", assPath + "f_pants_pony", "Assassin_F_Pants.7z"),
+        assMHL = new Anim("Assassin M Hoodless+Bow", assPath + "m_hl_b", "Assassin_M_HL.7z"),
+        assMJGT = new Anim("Assassin Jaffar Greentea", assPath + "m_jaf_gt", "Assassin_Jaff_GRT.7z"),
+        assMJSH = new Anim("Assassin Jaffar Shirt+Bow", assPath + "m_jaf_sh_b", "Assassin_Jaff_Shirt_Bow.7z"),
+        assMJCSA = new Anim("Assassin Jaffar CSAFix+Bow", assPath + "m_jaf_csa_b", "Assassin_Jaff_CSAfix_Bow.7z"),
+        assMJO = new Anim("Assassin Jojaffar", assPath + "m_jaf_jojo", "Assassin Jojaffar.7z"),
+        assMJOG = new Anim("Assassin Jaffar Rip+Bow", assPath + "m_jaf_og_b", "Assassin_Jaff_Rip_Bow.7z"),
+        assML = new Anim("Assassin Legault", assPath + "m_leg", "Assassin_Legault.7z"),
+        assMMGT = new Anim("Assassin Matthew Greentea", assPath + "m_mat_gt", "Assassin_Matt_GRT.7z")
+    ];
+
+    fillerTail("Assassins", "assRow", assassins, "#swordFill");
+};
+
+function heroFiller() {
+    var herPath = imgPath + "swords/hero/";
+
+    var heroes = [
+        heroFE = new Anim("Hero F Echidna", herPath + "f_echi", "Hero_F_Echidna.7z"),
+        heroFA = new Anim("Hero F Alt", herPath + "f_jap_alt", "Hero_F_Alt.7z"),
+        heroMA = new Anim("Hero M Coat", herPath + "m_arm", "Hero_M_Coat.7z"),
+        heroML = new Anim("Hero M_Lance", herPath + "m_l", "Hero_M_Lance.7z")
+    ];
+
+    fillerTail("Heroes", "heroRow", heroes, "#swordFill");
+};
+
+function mercFiller() {
+    var mercPath = imgPath + "swords/mercenary/";
+
+    var mercenaries = [
+        mercFEir = new Anim("Mercenary F Beta Eirika", mercPath + "f_be_eir", "Merc_F_Eir.7z"),
+        mercFBEi = new Anim("Mercenary F TBA Dei", mercPath + "f_blindei", "Merc_F_TBADei.7z"),
+        mercFRus = new Anim("Mercenary F Clark", mercPath + "f_russ", "Merc_F_Clark.7z"),
+        mercMArm = new Anim("Mercenary M Armored Alusq", mercPath + "m_arm_al", "Merc_M_Arm.7z"),
+        mercMEld = new Anim("Mercenary M Eldritch Pal", mercPath + "m_eld_pal", "Merc_M_Eld.7z"),
+        mercMFE6 = new Anim("Mercenary M FE6", mercPath + "m_fe6", "Merc_M_FE6.7z"),
+        mercMGrS = new Anim("Mercenary M Greatsword", mercPath + "m_gs", "Merc_M_GS.7z"),
+        mercMPal = new Anim("Mercenary M Repalette", mercPath + "m_pal", "Merc_M_Pal.7z"),
+        mercMPKA = new Anim("Mercenary M + PrKil Axe", mercPath + "m_pk_a", "Merc_M_Axe.7z"),
+        mercMSqr = new Anim("Squire Mercenary Alt", mercPath + "m_sq", "Squire.7z")
+    ];
+    fillerTail("Mercenaries", "mercRow", mercenaries, "#swordFill");
+};
+
+function myrmFiller() {
+    var myrmPath = imgPath + "swords/myrmidon/";
+
+    var myrmidons = [
+        myrmF = new Anim("Myrmidon F", myrmPath + "f", "Myrm_F.7z"),
+        myrmFM = new Anim("Myrmidon F Lyn/Merc Max", myrmPath + "f_max", "Myrm_F_Max.7z"),
+        myrmM = new Anim("Myrmidon M", myrmPath + "m", "Myrm_M.7z"),
+        myrmGuy = new Anim("Myrmidon Guy", myrmPath + "m_guy", "Myrm_Guy.7z"),
+        myrmMJk = new Anim("Myrmidon M Jacket", myrmPath + "m_jack", "Myrm_Jacket.7z"),
+        myrmJosh = new Anim("Myrmidon Joshua", myrmPath + "m_joshua", "Myrm_Joshua.7z")
+    ];
+    fillerTail("Myrmidons", "myrmRow", myrmidons, "#swordFill");
+};
+
+function rogueFiller() {
+    var roguePath = imgPath + "swords/rogue/";
+
+    var rogues = [
+        rogF = new Anim("Rogue F", roguePath + "f", "Rogue_F.7z"),
+        rogFP = new Anim("Rogue F Ponytail", roguePath + "f_p", "Rogue_F_PT.7z"),
+        rogM = new Anim("Rogue M + Staff", roguePath + "m_st", "Rogue_M_Staff.7z")
+    ];
+    fillerTail("Rogues", "rogueRow", rogues, "#swordFill");
+};
+
+function swMasterFiller() {
+    var swdMPath = imgPath + "swords/swordmaster/";
+
+    var swordmasters = [
+        swmF = new Anim("Swordmaster F", swdMPath + "f", "SwM_F.7z"),
+        swmF6 = new Anim("Swordmaster F FE6", swdMPath + "f_fe6", "SwM_F_FE6.7z"),
+        swmFLH = new Anim("Swordmaster F Long Hair", swdMPath + "f_lh_cl", "SwM_F_LH.7z"),
+        swmFSH = new Anim("Swordmaster F Short Hair", swdMPath + "f_sh_cl", "SwM_F_SH.7z"),
+        swmM = new Anim("Swordmaster M", swdMPath + "m", "SwM_M.7z"),
+        swmM6 = new Anim("Swordmaster M FE6", swdMPath + "m_fe6", "SwM_M_FE6.7z"),
+        swmMX = new Anim("Swordmaster M FE10", swdMPath + "m_fex", "SwM_M_FEX.7z"),
+        swmGy = new Anim("Swordmaster Guy", swdMPath + "m_guy", "SwM_Guy.7z"),
+        swmGyE = new Anim("Swordmaster Guy Eldritch", swdMPath + "m_guy_eld", "SwM_Guy_Eldritch.7z"),
+        swmJS0 = new Anim("Swordmaster Joshua SD", swdMPath + "m_js_halt", "SwM_Joshua_SD.7z"),
+        swmJS1 = new Anim("Swordmaster Joshua", swdMPath + "m_js_hat", "SwM_Joshua.7z"),
+        swmLL = new Anim("Swordmaster Lloyd", swdMPath + "m_ll", "SwM_Lloyd.7z"),
+        swmLGT = new Anim("Swordmaster Lloyd GreenTea", swdMPath + "m_ll_gt", "SwM_Lloyd_GrT.7z"),
+        swmTB = new Anim("TrueBlade M", swdMPath + "m_tb", "Trueblade.7z")
+    ];
+    fillerTail("Swordmasters", "swordMRow", swordmasters, "#swordFill");
+};
+
+function thiefFiller() {
+    var thiefPath = imgPath + "swords/thief/";
+
+    var thieves = [
+        thF6 = new Anim("Thief Cath", thiefPath + "f_fe6", "Th_F_E6.7z"),
+        thFL = new Anim("Thief Leila", thiefPath + "f_lei", "Th_F_Leila.7z"),
+        thFP = new Anim("Thief F Ponytail", thiefPath + "f_p", "Th_F_Pony.7z"),
+        thMM = new Anim("Thief Matthew", thiefPath + "m_at", "Th_M_Matthew.7z"),
+        thMC = new Anim("Thief Chad", thiefPath + "m_chad", "Th_M_Chad.7z"),
+        thMDS = new Anim("Thief FEDS", thiefPath + "m_feds", "Th_M_FEDS.7z")
+
+    ]
+}
+
 ///END FUNCTIONS///
 
 ///EVENT LISTENERS///
@@ -138,8 +239,7 @@ function animOptions(classList, headerName, filledDiv) {
 //Major listener for values populated by category selection
 $(".container").on("click", ".btn-light", function () {
     switch (this.getAttribute("data-prof")) {
-        case "Squire":
-            break;
+
         case "Assassin":
             $(".assRow").toggle();
             if (!assD) {
@@ -147,8 +247,52 @@ $(".container").on("click", ".btn-light", function () {
                 assfiller();
             };
             break;
+
+        case "Hero":
+            $(".heroRow").toggle();
+            if (!heroD) {
+                heroD = true;
+                heroFiller();
+            };
+            break;
+
+        case "Mercenary":
+            $(".mercRow").toggle();
+            if (!mercD) {
+                mercD = true;
+                mercFiller();
+            };
+            break;
+
+        case "Myrmidon":
+            $(".myrmRow").toggle();
+            if (!myrmD) {
+                myrmD = true;
+                myrmFiller();
+            };
+            break;
+
+        case "Rogue":
+            $(".rogueRow").toggle();
+            if (!rogueD) {
+                rogueD = true;
+                rogueFiller();
+            };
+            break;
+
+        case "Swordmaster":
+            $(".swordMRow").toggle();
+            if (!swmD) {
+                swmD = true;
+                swMasterFiller();
+            };
+            break;
+
+        //case
     };
 });
+
+$("")
 
 //Animates the images when clicked
 $(".container").on("click", ".gif", function () {
