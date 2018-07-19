@@ -154,7 +154,7 @@ $(".container").on("click", ".btn-light", function() {
             break;
         case "Assassin":
             if (!assD) {
-                assD = false;
+                assD = true;
                 assfiller();
             }
             break;
