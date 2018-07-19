@@ -4,7 +4,9 @@
 var swordD = false, lanceD = false, axeD = false, bowD = false, cavD = false, flyD = false, lordD = false, mageD = false, monsterD = false, dancerD = false, spellD = false;
 
 //Global Variables that control which classes load new html data from JS or not
-var assD = false, heroD = false, mercD = false, myrmD = false, rogueD = false, swmD = false;
+var assD = false, heroD = false, mercD = false, myrmD = false, rogueD = false, swmD = false, thiefD = false;
+var recD = false, solD = false, halD = false;
+
 
 //Global Variable that contains the base pathway that all images follow
 var imgPath = "feugit/assets/images/";
@@ -227,10 +229,48 @@ function thiefFiller() {
         thFP = new Anim("Thief F Ponytail", thiefPath + "f_p", "Th_F_Pony.7z"),
         thMM = new Anim("Thief Matthew", thiefPath + "m_at", "Th_M_Matthew.7z"),
         thMC = new Anim("Thief Chad", thiefPath + "m_chad", "Th_M_Chad.7z"),
+        thML = new Anim("Thief Legault", thiefPath + "m_leg", "Th_Legault.7z"),
         thMDS = new Anim("Thief FEDS", thiefPath + "m_feds", "Th_M_FEDS.7z")
+    ];
+    fillerTail("Thieves", "thiefRow", thieves, "#swordFill");
+};
 
-    ]
-}
+//Lance Fillers
+
+function recFiller() {
+    var recPath = imgPath + "lances/recruit/";
+
+    var recruits = [
+        reF8 = new Anim("Recruit Amelia", recPath + "f", "Recruit_F.7z")
+    ];
+    fillerTail("Recruits", "recRow", recruits, "#lanceFill");
+};
+
+function soldFiller() {
+    var soldPath = imgPath + "lances/soldier/";
+
+    var soldiers = [
+        solF = new Anim("Soldier F", soldPath + "f", "Soldier_F.7z"),
+        solFU = new Anim("Soldier F Alusq", soldPath + "f_alu", "Soldier_F_Alusq.7z"),
+        solFA = new Anim("Soldier Amelia", soldPath + "f_am", "Soldier_Amelia.7z"),
+        solM = new Anim("Soldier M", soldPath + "m", "Soldier_M.7z"),
+        solMU = new Anim("Soldier M Alusq", soldPath + "m_alu", "Soldier_M_Alusq.7z")
+    ];
+    fillerTail("Soldiers", "solRow", soldiers, "#lanceFill");
+};
+
+function halbFiller() {
+    var halbPath = imgPath + "lances/halberdier/";
+
+    var halberdiers = [
+        halF2 = new Anim("Halberdier F v2", halbPath + "f_2", "Halb_F_v2.7z"),
+        halM2 = new Anim("Halberdier M v2", halbPath + "m_2", "Halberdier_M_v2.7z"),
+        halMB = new Anim("Halberdier M Bone", halbPath + "m_bone", "Halberdier_M_Bone.7z"),
+        halMO = new Anim("Halberdier M Old", halbPath + "m_old", "Halberdier_M_Old.7z"),
+        dragM = new Anim("Dragoon M", halbPath + "m_drag", "Dragoon.7z")
+    ];
+    fillerTail("Halberdiers", "halRow", halberdiers, "#lanceFill");
+};
 
 ///END FUNCTIONS///
 
@@ -240,6 +280,7 @@ function thiefFiller() {
 $(".container").on("click", ".btn-light", function () {
     switch (this.getAttribute("data-prof")) {
 
+        //Swords
         case "Assassin":
             $(".assRow").toggle();
             if (!assD) {
@@ -285,6 +326,39 @@ $(".container").on("click", ".btn-light", function () {
             if (!swmD) {
                 swmD = true;
                 swMasterFiller();
+            };
+            break;
+
+        case "Thief":
+            $(".thiefRow").toggle();
+            if (!thiefD) {
+                thiefD = true;
+                thiefFiller();
+            };
+            break;
+
+        //Lances
+        case "Recruit":
+            $(".recRow").toggle();
+            if (!recD) {
+                recD = true;
+                recFiller();
+            };
+            break;
+
+        case "Soldier":
+            $(".solRow").toggle();
+            if (!solD) {
+                solD = true;
+                soldFiller();
+            };
+            break;
+
+        case "Halberdier":
+            $(".halRow").toggle();
+            if (!halD) {
+                halD = true;
+                halbFiller();
             };
             break;
 
@@ -336,7 +410,7 @@ $(".nav-link").click(function () {
             following the initial load, preventing the placement of more buttons.*/
             if (!swordD) {
                 swordD = true;
-                var swordOpts = ["Squire", "Mercenary", "Hero", "Myrmidon", "Swordmaster", "Thief", "Assassin", "Rogue"];
+                var swordOpts = ["Mercenary", "Hero", "Myrmidon", "Swordmaster", "Thief", "Assassin", "Rogue"];
                 animOptions(swordOpts, "Sword Infantry", "#swordFill");
             };
             break;
@@ -345,7 +419,7 @@ $(".nav-link").click(function () {
             $("#lanceFill").toggle();
             if (!lanceD) {
                 lanceD = true;
-                var lanceOpts = ["Recruit", "Soldier", "Dragoon", "Halberdier"];
+                var lanceOpts = ["Recruit", "Soldier", "Halberdier"];
                 animOptions(lanceOpts, "Lance Infantry", "#lanceFill");
             };
             break;
