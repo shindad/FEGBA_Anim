@@ -6,7 +6,7 @@ var swordD = false, lanceD = false, axeD = false, bowD = false, cavD = false, fl
 //Global Variables that control which classes load new html data from JS or not
 var assD = false, heroD = false, mercD = false, myrmD = false, rogueD = false, swmD = false, thiefD = false;
 var recD = false, solD = false, halD = false;
-
+var bersD = false, brigD = false, fgtrD = false, journD = false, pirD = false, warD = false;
 
 //Global Variable that contains the base pathway that all images follow
 var imgPath = "feugit/assets/images/";
@@ -264,13 +264,89 @@ function halbFiller() {
 
     var halberdiers = [
         halF2 = new Anim("Halberdier F v2", halbPath + "f_2", "Halb_F_v2.7z"),
-        halM2 = new Anim("Halberdier M v2", halbPath + "m_2", "Halberdier_M_v2.7z"),
-        halMB = new Anim("Halberdier M Bone", halbPath + "m_bone", "Halberdier_M_Bone.7z"),
-        halMO = new Anim("Halberdier M Old", halbPath + "m_old", "Halberdier_M_Old.7z"),
+        halM2 = new Anim("Halberdier M v2", halbPath + "m_2", "Halb_M_v2.7z"),
+        halMB = new Anim("Halberdier M Bone", halbPath + "m_bone", "Halb_M_Bone.7z"),
+        halMO = new Anim("Halberdier M Old", halbPath + "m_old", "Halb_M_Old.7z"),
         dragM = new Anim("Dragoon M", halbPath + "m_drag", "Dragoon.7z")
     ];
     fillerTail("Halberdiers", "halRow", halberdiers, "#lanceFill");
 };
+
+function bersFiller() {
+    var bersPath = imgPath + "axes/berserker/";
+
+    var berserkers = [
+        beFSK = new Anim("Berserker F Skitty+", bersPath + "f_skit_e", "Bers_F_Skitty.7z"),
+        bersk = new Anim('Berserker M', bersPath + 'm', 'Bers_M.7z'),
+        beSwd = new Anim('Berserker M Sword', bersPath + 'm_sw', 'Bers_Swd.7z'),
+        beDar = new Anim("Berserker Dart", bersPath + "m_dart", "Bers_Dart.7z"),
+        beHKY = new Anim("Berserker Hawkeye", bersPath + "m_hk", "Bers_Hawkeye.7z"),
+        beHKZ = new Anim("Berserker M Hawkzerker", bersPath + "m_hz", "Bers_M_HZ.7z"),
+        bePal = new Anim("Berserker Repalette", bersPath + "m_pal", "Bers_M_Pal.7z"),
+        beYet = new Anim('Berserker M Yeti', bersPath + 'm_yeti', 'Bers_Yeti.7z'),
+        beBrg = new Anim("Mounted Brigand M + Bow", bersPath + "m_brig_bow", "Mtd_Brig_M.7z")
+    ];
+    fillerTail("Berserkers", "bersRow", berserkers, "#axeFill");
+};
+
+function brigFiller() {
+    var brigPath = imgPath + "axes/brigand/";
+
+    var brigands = [
+        brigF = new Anim("Brigand F", brigPath + "f", "Brig_F.7z"),
+        brgMA = new Anim("Brigand M Armored", brigPath + "m_arm", "Brig_M_Armored.7z"),
+        brgME = new Anim("Brigand M Eldritch", brigPath + "m_eld", "Brig_M_Eld.7z"),
+        brgMM = new Anim("Brigand M + Magic", brigPath + "m_mag", "Brig_M_Magic.7z")
+    ];
+    fillerTail("Brigands", "brigRow", brigands, "#axeFill");
+};
+
+function fgtrFiller() {
+    var fgtrPath = imgPath + "axes/fighter/";
+
+    var fighters = [
+        ftFLH = new Anim("Fighter F Long Hair BM", fgtrPath + "f_lh_bm", "Fighter_F_LH.7z"),
+        ftFSH = new Anim("Fighter F Short Hair BM", fgtrPath + "f_sh_bm", "Fighter_F_SH.7z"),
+        ftMe9 = new Anim("Fighter M FE9", fgtrPath + "m_fe9", "Fighter_M_FE9.7z"),
+        ftM9P = new Anim("Fighter M FE9 Pal", fgtrPath + "m_fe9p", "Fighter_M_FE9P.7z"),
+        ftMer = new Anim("Fighter M Merc", fgtrPath + "m_merc", "Fighter_M_Merc.7z"),
+        ftSwd = new Anim("Fighter M Sword Vilk", fgtrPath + "m_sw", "Fighter_M_Sw.7z")
+    ];
+    fillerTail("Fighters", "fgtrRow", fighters, "#axeFill");
+};
+
+function journeyFiller() {
+    var jPath = imgPath + "axes/journeyman/";
+
+    var jmen = [
+        jman = new Anim("Journeyman M", jPath + "m", "Journeyman.7z")
+    ];
+    fillerTail("Journeymen", "journeyRow", jmen, "#axeFill");
+};
+
+function pirateFiller() {
+    var pPath = imgPath + "axes/pirate/";
+
+    var pirates = [
+        pim = new Anim("Pirate M", pPath + "m", "Pirate.7z"),
+        pimp = new Anim("Pirate M Pal", pPath + "m_p", "Pirate_Pal.7z"),
+        pimpw = new Anim("Pirate M Pal Wan", pPath + "m_pwan", "Pirate_PWAN.7z"),
+        pimSw = new Anim("Pirate M Sw", pPath + "m_sw", "Pirate_Sw.7z")
+    ];
+    fillerTail("Pirates", "pirRow", pirates, "#axeFill");
+};
+
+function warFiller() {
+    var wPath = imgPath + "axes/warrior/";
+
+    var warriors = [
+        warF = new Anim("Warrior F (Temp)", wPath + "f_t", "Warrior_F.7z"),
+        warM = new Anim("Warrior M", wPath + "m", "Warrior.7z")
+    ];
+    fillerTail("Warrior", "warRow", warriors, "#axeFill");
+};
+
+//Bows
 
 ///END FUNCTIONS///
 
@@ -362,6 +438,55 @@ $(".container").on("click", ".btn-light", function () {
             };
             break;
 
+        //Axes
+        case "Berserker":
+            $(".bersRow").toggle();
+            if (!bersD) {
+                bersD = true;
+                bersFiller();
+            };
+            break;
+
+        case "Brigand":
+            $(".brigRow").toggle();
+            if (!brigD) {
+                brigD = true;
+                brigFiller();
+            }
+            break;
+        
+        case "Fighter":
+            $(".fgtrRow").toggle();
+            if (!fgtrD) {
+                fgtrD = true;
+                fgtrFiller();
+            };
+            break;
+        
+        case "Journeyman":
+            $(".journeyRow").toggle();
+            if (!journD) {
+                journD = true;
+                journeyFiller();
+            };
+            break;
+
+        case "Pirate":
+            $(".pirRow").toggle();
+            if (!pirD) {
+                pirD = true;
+                pirateFiller();
+            };
+            break;
+        
+        case "Warrior":
+            $(".warRow").toggle();
+            if (!warD) {
+                warD = true;
+                warFiller();
+            };
+            break;
+
         //case
     };
 });
@@ -428,7 +553,7 @@ $(".nav-link").click(function () {
             $("#axeFill").toggle();
             if (!axeD) {
                 axeD = true;
-                var axeOpts = ["Journeyman", "Brigand", "Mounted Brigand", "Pirate", "Berserker", "Fighter", "Warrior", "Phantom"];
+                var axeOpts = ["Journeyman", "Brigand", "Pirate", "Berserker", "Fighter", "Warrior"];
                 animOptions(axeOpts, "Axe Infantry", "#axeFill");
             };
             break;
