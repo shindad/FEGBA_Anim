@@ -18,7 +18,7 @@ var monsterOpts = ["Dragon", "Manakete", "Ghost", "Bael", "Centaur", "Cyclops", 
 var danceOpts = ["Bard", "Dancer", "Magic Seal", "Merlinus"]
 var spellOpts = ["Aircalibur", "Aqua", "Aqua Edge", "Arcthunder", "Artemis", "Aura", "Crimson Eye", "Donbettyr", "Bolganone"]
 
-var imgPath = "../feugit/assets/images/"
+var imgPath = "feugit/assets/images/"
 
 ///END GLOBAL VARIABLES///
 
