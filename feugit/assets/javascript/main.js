@@ -19,7 +19,7 @@ var danceOpts = ["Bard", "Dancer", "Magic Seal", "Merlinus"]
 var spellOpts = ["Aircalibur", "Aqua", "Aqua Edge", "Arcthunder", "Artemis", "Aura", "Crimson Eye", "Donbettyr", "Bolganone"]
 
 var imgPath = "feugit/assets/images/"
-FEGBA_Anim/feugit/assets/images/swords/assassin/f_gt.png 
+//FEGBA_Anim/feugit/assets/images/swords/assassin/f_gt.png 
 
 ///END GLOBAL VARIABLES///
 
