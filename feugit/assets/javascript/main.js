@@ -6,6 +6,7 @@ var swordD = false, lanceD = false, axeD = false, bowD = false, cavD = false, fl
 //Global Variables that control which classes load new html data from JS or not
 var assD = false;
 
+//Global Variable that contains the base pathway that all images follow
 var imgPath = "feugit/assets/images/";
 
 ///END GLOBAL VARIABLES///
@@ -85,7 +86,12 @@ function assfiller() {
         assPPY = new Anim("Assassin F Pants Ponytail", assPath + "f_pants_pony", "Assassin_F_Pants.7z"),
         assMHL = new Anim("Assassin M Hoodless+Bow", assPath + "m_hl_b", "Assassin_M_HL.7z"),
         assMJGT = new Anim("Assassin Jaffar Greentea", assPath + "m_jaf_gt", "Assassin_Jaff_GRT.7z"),
-        assMJSH = new Anim("Assassin Jaffar Shirt+Bow", assPath + "m_jaf_sh_b", "Assassin_Jaff_Shirt_Bow.7z")
+        assMJSH = new Anim("Assassin Jaffar Shirt+Bow", assPath + "m_jaf_sh_b", "Assassin_Jaff_Shirt_Bow.7z"),
+        assMJCSA = new Anim("Assassin Jaffar CSAFix+Bow", assPath + "m_jaf_csa_b", "Assassin_Jaff_CSAfix_Bow.7z"),
+        assMJO = new Anim("Assassin Jojaffar", assPath + "m_jaf_jojo", "Assassin Jojaffar.7z"),
+        assMJOG = new Anim("Assassin Jaffar Rip+Bow", assPath + "m_jaf_og_b", "Assassin_Jaff_Rip_Bow.7z"),
+        assML = new Anim("Assassin Legault", assPath + "m_leg", "Assassin_Legault.7z"),
+        assMMGT = new Anim("Assassin Matthew Greentea", assPath + "m_mat_gt", "Assassin_Matt_GRT.7z")
     ];
 
     var fRow = $("<div>");
