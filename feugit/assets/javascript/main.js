@@ -6,52 +6,13 @@ var swordD = false, lanceD = false, axeD = false, bowD = false, cavD = false, fl
 //Global Variables that control which classes load new html data from JS or not
 var assD = false;
 
-var swordOpts = ["Squire", "Mercenary", "Hero", "Myrmidon", "Swordmaster", "Thief", "Assassin", "Rogue"];
-var axeOpts = ["Journeyman", "Brigand", "Mounted Brigand", "Pirate", "Berserker", "Fighter", "Warrior", "Phantom"];
-var lanceOpts = ["Recruit", "Soldier", "Dragoon", "Halberdier"];
-var bowOpts = ["Archer", "Ballistae", "Lyn-Archer", "Nomad", "Nomad Trooper", "Ranger", "Sniper"];
-var knightOpts = ["Knight", "General", "Great Knight", "Baron", "Emperor", "Black Knight", "Marshall", "Cavalier", "Paladin",  "Grand Paladin", "Master Knight"];
-var flierOpts = ["Pegasus Knight", "Falcoknight","Griffon Knight", "Wyvern Rider", "Wicked Wyvern", "Wyvern Lord", "Wyvern Knight"]
-var lordOpts = ["Eirika Lord", "Eirika Great Lord", "Eliwood Lord", "Eliwood Knight Lord", "Ephraim Lord", "Ephraim Great Lord", "Fencer", "Greil Lord", "Harbinger", "Hector Lord", "Hector Great Lord", "Ike Ranger", "Ike Vanguard", "Karina Fencer", "Lyn Lord", "Lyn Blade Lord", "Mage Lord", "Marth", "Roy", "Squire", "King"]
-var mageOpts = ["Pupil", "Mage", "Sage", "Mage Knight", "Archsage", "Brunnya Holy Sage", "High Magus", "Light Mage", "Monk", , "Valkyrie", "Bishop", "Patriarch", "Shaman", "Druid", "Dark Knight", "Summoner", "Dark Druid", "Necromancer", "Troubadour", "Priest", "Cleric"]
-var monsterOpts = ["Dragon", "Manakete", "Ghost", "Bael", "Centaur", "Cyclops", "Gargoyle", "Mogall", "Gorgon", "Skeleton", "Zombie", "Succubus"]
-var danceOpts = ["Bard", "Dancer", "Magic Seal", "Merlinus"]
-var spellOpts = ["Aircalibur", "Aqua", "Aqua Edge", "Arcthunder", "Artemis", "Aura", "Crimson Eye", "Donbettyr", "Bolganone"]
-
-var imgPath = "feugit/assets/images/"
-//FEGBA_Anim/feugit/assets/images/swords/assassin/f_gt.png 
+var imgPath = "feugit/assets/images/";
 
 ///END GLOBAL VARIABLES///
 
-///FUNCTIONS///
+///CONSTRUCTORS///
 
-//Builds the images and downloader info for each animation
-function makeCard(feClass, URL, dlName) {
-    var colDiv = $("<div>");
-    colDiv.addClass("col-md-4 col-sm-6 col-12");
-
-    var animImg = $("<img>");
-    animImg.addClass("gif");
-    animImg.attr({
-        src: URL + ".png",
-        "data-state": "still",
-        "data-animate": URL + ".gif",
-        "data-still": URL + ".png"
-    });
-
-    var animName = $("<a>");
-    animName.addClass("animName");
-    animName.html(feClass);
-    animName.attr({
-        href: URL + ".7z",
-        download: dlName
-    });
-
-    colDiv.append(animImg, "<br>", animName);
-    return colDiv;
-};
-
-//Constructor
+//Creates an object of the class animation to be placed on the page
 function Anim(feClass, URL, dlName) {
     this.feClass = feClass;
     this.URL = URL;
@@ -82,8 +43,38 @@ function Anim(feClass, URL, dlName) {
     };
 };
 
+///CONSTRUCTORS///
+
+///FUNCTIONS///
+
+//Builds the images and downloader info for each animation
+function makeCard(feClass, URL, dlName) {
+    var colDiv = $("<div>");
+    colDiv.addClass("col-md-4 col-sm-6 col-12");
+
+    var animImg = $("<img>");
+    animImg.addClass("gif");
+    animImg.attr({
+        src: URL + ".png",
+        "data-state": "still",
+        "data-animate": URL + ".gif",
+        "data-still": URL + ".png"
+    });
+
+    var animName = $("<a>");
+    animName.addClass("animName");
+    animName.html(feClass);
+    animName.attr({
+        href: URL + ".7z",
+        download: dlName
+    });
+
+    colDiv.append(animImg, "<br>", animName);
+    return colDiv;
+};
+
 function assfiller() {
-    //initialize temporary path for calling all assassin animations
+     //initialize temporary path for calling all assassin animations
     var assPath = imgPath + "swords/assassin/";
 
     var assassins = [
@@ -98,29 +89,9 @@ function assfiller() {
     for (var i = 0; i < assassins.length; i++) {
         fRow.append(assassins[i].makeCard());
     };
-
+        
     $("#swordFill").append(fRow);
 };
-
-function classFiller() {
-    //initialize temporary path for calling all assassin animations
-    var classPath = imgPath + "swords/assassin/";
-
-    var assassins = [
-        assFGT = new Anim("Assassin F GreenTea", assPath + "f_gt", "Assassin_F_GRT.7z"),
-        assFHL = new Anim("Assassin F Hoodless Skirt", assPath + "f_hl_pony", "Assassin_F_Skirt.7z"),
-        assPPY = new Anim("Assassin F Pants Ponytail", assPath + "f_pants_pony", "Assassin_F_Pants.7z")
-    ];
-
-    var fRow = $("<div>");
-    fRow.addClass("row assRow")
-
-    for (var i = 0; i < assassins.length; i++) {
-        fRow.append(assassins[i].makeCard());
-    };
-
-    $("#swordFill").append(fRow);
-}
 
 //Builds the list of clickable buttons made from clicking class types
 function animOptions(classList, headerName, filledDiv) {
@@ -154,10 +125,11 @@ $(".container").on("click", ".btn-light", function() {
         case "Squire":
             break;
         case "Assassin":
+            $(".assRow").toggle();
             if (!assD) {
                 assD = true;
                 assfiller();
-            }
+            };
             break;
     };
 });
@@ -185,6 +157,7 @@ $(".nav-link").click(function () {
             $("#swordFill").toggle();
             if (swordD === false) {
                 swordD = true;
+                var swordOpts = ["Squire", "Mercenary", "Hero", "Myrmidon", "Swordmaster", "Thief", "Assassin", "Rogue"];
                 animOptions(swordOpts, "Sword Infantry", "#swordFill");
             };
             break;
@@ -192,13 +165,15 @@ $(".nav-link").click(function () {
             $("#lanceFill").toggle();
             if (lanceD === false) {
                 lanceD = true;
+                var lanceOpts = ["Recruit", "Soldier", "Dragoon", "Halberdier"];
                 animOptions(lanceOpts, "Lance Infantry", "#lanceFill");
             };
             break;
         case "axes":
             $("#axeFill").toggle();
             if (axeD === false) {
-                axeD = true;
+                axeD = true;                
+var axeOpts = ["Journeyman", "Brigand", "Mounted Brigand", "Pirate", "Berserker", "Fighter", "Warrior", "Phantom"];
                 animOptions(axeOpts, "Axe Infantry", "#axeFill");
             };
             break;
@@ -206,6 +181,7 @@ $(".nav-link").click(function () {
             $("#bowFill").toggle();
             if (bowD === false) {
                 bowD = true;
+                var bowOpts = ["Archer", "Ballistae", "Lyn-Archer", "Nomad", "Nomad Trooper", "Ranger", "Sniper"];
                 animOptions(bowOpts, "Bow Units", "#bowFill");
             };
             break;
@@ -213,24 +189,36 @@ $(".nav-link").click(function () {
             $("#knightFill").toggle();
             if (bowD === false) {
                 bowD = true;
+                var knightOpts = ["Knight", "General", "Great Knight", "Baron", "Emperor", "Black Knight", "Marshall", "Cavalier", "Paladin",  "Grand Paladin", "Master Knight"];
                 animOptions(knightOpts, "Knight and Cavalry Units", "#knightFill");
             };
             break;
         case "fliers":
+            var flierOpts = ["Pegasus Knight", "Falcoknight","Griffon Knight", "Wyvern Rider", "Wicked Wyvern", "Wyvern Lord", "Wyvern Knight"]
+
             break;
         case "lords":
+            var lordOpts = ["Eirika Lord", "Eirika Great Lord", "Eliwood Lord", "Eliwood Knight Lord", "Ephraim Lord", "Ephraim Great Lord", "Fencer", "Greil Lord", "Harbinger", "Hector Lord", "Hector Great Lord", "Ike Ranger", "Ike Vanguard", "Karina Fencer", "Lyn Lord", "Lyn Blade Lord", "Mage Lord", "Marth", "Roy", "Squire", "King"]
+
             break;
         case "mages":
+            var mageOpts = ["Pupil", "Mage", "Sage", "Mage Knight", "Archsage", "Brunnya Holy Sage", "High Magus", "Light Mage", "Monk", , "Valkyrie", "Bishop", "Patriarch", "Shaman", "Druid", "Dark Knight", "Summoner", "Dark Druid", "Necromancer", "Troubadour", "Priest", "Cleric"]
+
             break;
         case "monsters":
+            var monsterOpts = ["Dragon", "Manakete", "Ghost", "Bael", "Centaur", "Cyclops", "Gargoyle", "Mogall", "Gorgon", "Skeleton", "Zombie", "Succubus"]
+
             break;
         case "dancers":
+        var danceOpts = ["Bard", "Dancer", "Magic Seal", "Merlinus"]
+
             break;
         case "spells":
+        var spellOpts = ["Aircalibur", "Aqua", "Aqua Edge", "Arcthunder", "Artemis", "Aura", "Crimson Eye", "Donbettyr", "Bolganone"]
+
             break;
     };
 });
-
 
 //$("#")
 
