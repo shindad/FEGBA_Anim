@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FEGBA Graphical Animation Repo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Precautionary clear Default Styles-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+
+    <!--Bootstrap Styles-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <!--Custom Scripts/Styles-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+
+</head>
+
+<body>
+
+    <!--Rest of body following NavBar-->
+    <div class="container">
+
+        <!--Row 1: Header-->
+        <div class="row headerUnder">
+            <h1 class="col-12 headerText">
+                FEGBA Graphical Animation Repo
+            </h1>
+        </div>
+
+
+        <!--Row 2-->
+        <div class="row">
+            <!--Side navbar-->
+            <nav class="nav flex-column col-lg-2 col-md-2 col-sm-3 mr-auto" id="sideBar">
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="about">About</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="swords">Swords</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="lances">Lances</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="axes">Axes</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="bows">Bows</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="knights">Cav/Armor</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="fliers">Fliers</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="lords">Lords</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="mages">Mages</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="monsters">Creatures</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="dancer">Bards/Other</button>
+                <button type="button" class="nav-link btn btn-secondary ml-2 my-1" id="spells">Spells</button>
+            </nav>
+
+            <!--empty div for spacing-->
+            <!-- <div class="col-lg-1 col-md-1 hidden-lg-down">
+
+            </div> -->
+
+            <!--Mainbody unused atm-->
+            <div class="col-lg-9 col-md-9 col-sm-9" id="mainBody">
+
+                <!--Body Row 2: About Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="aboutFill">
+                        This site provides a graphical representation of the FEU Ultimate Graphics Repo. It displays GIFs of the animations in action
+                        with links to the individual animation folders for easy downloading. Credit to Klokinator for creating
+                        the repo and the countless animators who have provided their work for the community to use. Please
+                        remember to credit the creators for their works.
+                    </div>
+                </div>
+
+                <!--Body Row 3: Sword Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="swordFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+                </div>
+
+                <!--Body Row 4: Lance Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="lanceFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+                </div>
+
+                <!--Body Row 5: Axe Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="axeFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+                </div>
+
+                <!--Body Row 6: Bow Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="bowFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+                </div>
+
+                <!--Body Row 7: Knight Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="knightFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+
+                </div>
+
+                <!--Body Row 8: Flier Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="flierFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+                </div>
+
+                <!--Body Row 9: Lord Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="lordFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+                </div>
+
+                <!--Body Row 10: Magic Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="MagicFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+
+                </div>
+
+                <!--Body Row 11: Monster Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="monsterFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+                </div>
+
+                <!--Body Row 12: Dancer Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="dancerFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+                </div>
+
+                <!--Body Row 13: Spell Placeholder-->
+                <div class="row">
+                    <div class="col-12" id="spellFill">
+                        <!--Filled with Javascript on click-->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Bootstrap Scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <!--Custom Script-->
+    <script src="assets/javascript/main.js"></script>
+</body>
+
+</html>

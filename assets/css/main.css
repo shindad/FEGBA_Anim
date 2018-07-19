@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("../images/global/paperbg.jpg") fixed bottom right;
+    background-size: cover;
+    font-weight: 600;
+}
+
+.centerText {
+    text-align: center;
+}
+
+/* Sidebar Styles */
+.nav {
+    background: url("../images/global/firenav.jpg") fixed bottom right;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+/* Header Styles */
+.headerUnder {
+    border-bottom: 1px solid black;
+}
+
+.headerText {
+    text-align: center;
+    font-weight: 400;
+}
+
+.gif {
+    max-width: 90%;
+    height: auto;
+}
+
+.animName {
+    font-size: small;
+}
