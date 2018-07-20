@@ -390,15 +390,15 @@ function archerFiller() {
     var archPath = imgPath + "bows/archer/";
 
     var archers = [
-        arcFe6 = new Anim("Archer F FE6", archPath + "f_e6", "Archer_F_FE6.7z"),
-        arcFNe = new Anim("Archer Neimi", archPath + "f_nei", "Archer_Neimi.7z"),
-        arcFRe = new Anim("Archer Rebecca", archPath + "f_reb", "Archer_Rebecca.7z"),
-        arcFSk = new Anim("Archer F Skirt", archPath + "f_skt", "Archer_F_Skirt.7z"),
-        ArcFOG = new Anim("Archer F", archPath + "f", "Archer_F.7z"),
-        ArcMOG = new Anim("Arhcer M", archPath + "m", "Archer_M.7z"),
-        arcMCa = new Anim("Archer M Cape", archPath + "m_cape", "Archer_M_Cape.7z"),
-        arcMe5 = new Anim("Archer M FE5", archPath + "m_fe5", "Archer_M_FE5.7z"),
-        arcMe6 = new Anim('Archer M FE6', archPath + 'm_fe6', 'Archer_M_FE6.7z')
+        arcFe6 = new Anim("Archer F FE6", archPath + "f_e6", "Archer_F_FE6.7z", ["bow"], "IS"),
+        ArcFOG = new Anim("Archer F", archPath + "f", "Archer_F.7z", ["bow"], "IS"),
+        arcFNe = new Anim("Archer Neimi", archPath + "f_nei", "Archer_Neimi.7z", ["bow"], "Feaw"),
+        arcFRe = new Anim("Archer Rebecca", archPath + "f_reb", "Archer_Rebecca.7z", ["bow"], "IS"),
+        arcFSk = new Anim("Archer F Skirt", archPath + "f_skt", "Archer_F_Skirt.7z", ["bow"], "George Reds"),
+        ArcMOG = new Anim("Arhcer M", archPath + "m", "Archer_M.7z", ["bow"], "IS"),
+        arcMCa = new Anim("Archer M Cape", archPath + "m_cape", "Archer_M_Cape.7z", ["bow"], "Yangfly Master"),
+        arcMe5 = new Anim("Archer M FE5", archPath + "m_fe5", "Archer_M_FE5.7z", ["bow"], "Pushwall"),
+        arcMe6 = new Anim('Archer M FE6', archPath + 'm_fe6', 'Archer_M_FE6.7z', ["bow"], "IS")
     ];
     fillerTail("Archers", "archRow", archers, "#bowFill");
 };
@@ -410,7 +410,7 @@ function ballFiller() {
         BF_Lo = new Anim("Ballista Louise", ballPath + "f_l", "Ballista_Louise.7z"),
         BF_LH = new Anim("Ballista F Long-Hair", ballPath + "f_lh", "Ballista_F_LH.7z"),
         BF_Re = new Anim("Ballista Rebecca", ballPath + "f_r", "Ballista_Rebecca.7z"),
-        BM_Wi = new Anim("Ballista Wil", ballPath + "m_w", "Ballista_Wil.7z"),
+        BM_Wi = new Anim("Ballista Wil", ballPath + "m_w", "Ballista_Wil.7z", ["bow"], "Greentea, qiuzf007"),
         BM_WoA = new Anim("Ballista Wolt Armored", ballPath + "m_wo_arm", "Ballista_Wolt_Arm.7z"),
         BM_Wo = new Anim("Ballista Wolt", ballPath + "m_wo", "Ballista_Wolt.7z")
     ];
