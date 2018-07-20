@@ -5,6 +5,11 @@ body {
     font-weight: 600;
 }
 
+a {
+    color: black;
+    font-weight: 200;
+}
+
 .centerText {
     text-align: center;
 }
@@ -31,8 +36,27 @@ body {
 .gif {
     max-width: 90%;
     height: auto;
+    border-width: 90%;
 }
 
 .animName {
     font-size: small;
+}
+
+.imgIcon {
+    max-height: 16px;
+    width: auto;
+    margin: -5px 2px 0px;
+}
+
+.authorText {
+    font-weight: 100;
+    font-size: xx-small;
+}
+
+.cardbg {
+    background: radial-gradient(cadetblue 65%, darkslategray);
+    margin: 0 11%;
+    border-radius: 0 0 7px 7px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
