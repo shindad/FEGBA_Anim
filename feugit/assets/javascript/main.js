@@ -231,7 +231,8 @@ function rogueFiller() {
     var rogues = [
         rogF = new Anim("Rogue F", roguePath + "f", "Rogue_F.7z", ["sword"], "eCut, Skitty"),
         rogFP = new Anim("Rogue F Ponytail", roguePath + "f_p", "Rogue_F_PT.7z", ["sword"], "TempMael"),
-        rogM = new Anim("Rogue M + Staff", roguePath + "m_st", "Rogue_M_Staff.7z", ["sword", "staff"], "IS, ukulelej")
+        rogM = new Anim("Rogue M", roguePath + "m_st", "Rogue_M_Staff.7z", ["sword", "staff"], "IS, ukulelej"),
+        rogMP = new Anim("Rogue M Repalette", roguePath + "m_p", "Rogue_M_Repal.7z", ["sword"], "Feaw")
     ];
     fillerTail("Rogues", "rogueRow", rogues, "#swordFill");
 };
@@ -395,7 +396,7 @@ function archerFiller() {
         arcFNe = new Anim("Archer Neimi", archPath + "f_nei", "Archer_Neimi.7z", ["bow"], "Feaw"),
         arcFRe = new Anim("Archer Rebecca", archPath + "f_reb", "Archer_Rebecca.7z", ["bow"], "IS"),
         arcFSk = new Anim("Archer F Skirt", archPath + "f_skt", "Archer_F_Skirt.7z", ["bow"], "George Reds"),
-        ArcMOG = new Anim("Arhcer M", archPath + "m", "Archer_M.7z", ["bow"], "IS"),
+        ArcMOG = new Anim("Archer M", archPath + "m", "Archer_M.7z", ["bow"], "IS"),
         arcMCa = new Anim("Archer M Cape", archPath + "m_cape", "Archer_M_Cape.7z", ["bow"], "Yangfly Master"),
         arcMe5 = new Anim("Archer M FE5", archPath + "m_fe5", "Archer_M_FE5.7z", ["bow"], "Pushwall"),
         arcMe6 = new Anim('Archer M FE6', archPath + 'm_fe6', 'Archer_M_FE6.7z', ["bow"], "IS")
@@ -407,12 +408,12 @@ function ballFiller() {
     var ballPath = imgPath + "bows/ballistae/";
 
     var ballistae = [
-        BF_Lo = new Anim("Ballista Louise", ballPath + "f_l", "Ballista_Louise.7z"),
-        BF_LH = new Anim("Ballista F Long-Hair", ballPath + "f_lh", "Ballista_F_LH.7z"),
-        BF_Re = new Anim("Ballista Rebecca", ballPath + "f_r", "Ballista_Rebecca.7z"),
+        BF_Lo = new Anim("Ballista Louise", ballPath + "f_l", "Ballista_Louise.7z", ["bow"], "St Jack"),
+        BF_LH = new Anim("Ballista F Long-Hair", ballPath + "f_lh", "Ballista_F_LH.7z", ["bow"], "IS"),
+        BF_Re = new Anim("Ballista Rebecca", ballPath + "f_r", "Ballista_Rebecca.7z", ["bow"], "St Jack"),
         BM_Wi = new Anim("Ballista Wil", ballPath + "m_w", "Ballista_Wil.7z", ["bow"], "Greentea, qiuzf007"),
-        BM_WoA = new Anim("Ballista Wolt Armored", ballPath + "m_wo_arm", "Ballista_Wolt_Arm.7z"),
-        BM_Wo = new Anim("Ballista Wolt", ballPath + "m_wo", "Ballista_Wolt.7z")
+        BM_WoA = new Anim("Ballista Wolt Armored", ballPath + "m_wo_arm", "Ballista_Wolt_Arm.7z", ["bow"], "St Jack"),
+        BM_Wo = new Anim("Ballista Wolt", ballPath + "m_wo", "Ballista_Wolt.7z", ["bow"], "IS")
     ];
     fillerTail("Ballistae", "ballRow", ballistae, "#bowFill");
 };
@@ -421,9 +422,9 @@ function nomFiller() {
     var nomPath = imgPath + "bows/nomad/";
 
     var nomads = [
-        nomF = new Anim("Nomad F", nomPath + "f", "Nomad_F.7z"),
-        nomM = new Anim("Nomad M", nomPath + "m", "Nomad_M.7z"),
-        nomMg = new Anim("Nomad M Generic", nomPath + "m_gen", "Nomad_M_Gen.7z")
+        nomF = new Anim("Nomad F", nomPath + "f", "Nomad_F.7z", ["bow"], "IS"),
+        nomM = new Anim("Nomad M", nomPath + "m", "Nomad_M.7z", ["bow"], "IS"),
+        nomMg = new Anim("Nomad M Generic", nomPath + "m_gen", "Nomad_M_Gen.7z", ["bow"], "eCut")
     ];
     fillerTail("Nomads", "nomRow", nomads, "#bowFill");
 };
@@ -432,46 +433,48 @@ function nomTFiller() {
     var nomTPath = imgPath + "bows/nomad_trooper/";
 
     var nom_troopers = [
-        ntFOG = new Anim("Nmd Trooper F", nomTPath + "f", "Nmd_Tpr_F.7z"),
-        ntFFx = new Anim("Nmd Trooper F Fix", nomTPath + "f_fix", "Nmd_Tpr_F_Fix.7z"),
-        ntMF6 = new Anim("Nmd Trooper M FE6", nomTPath + "m_e6", "Nmd_Tpr_M_FE6.7z"),
-        ntMOG = new Anim("Nmd Trooper M", nomTPath + "m", "Nmd_Tpr_M.7z"),
-        NtMFx = new Anim("Nmd Trooper M BowFix", nomTPath + "m_fix_b", "Nmd_Tpr_M_BowFix.7z")
+        ntFOG = new Anim("Nmd Trooper F", nomTPath + "f", "Nmd_Tpr_F.7z", ["bow", "sword"], "IS"),
+        ntFFx = new Anim("Nmd Trooper F Fix", nomTPath + "f_fix", "Nmd_Tpr_F_Fix.7z", ["bow", "sword"]),
+        ntMF6 = new Anim("Nmd Trooper M FE6", nomTPath + "m_e6", "Nmd_Tpr_M_FE6.7z", ["bow", "sword"], "IS"),
+        ntMOG = new Anim("Nmd Trooper M", nomTPath + "m", "Nmd_Tpr_M.7z", ["bow", "sword"], "IS"),
+        NtMFx = new Anim("Nmd Trooper M BowFix", nomTPath + "m_fix_b", "Nmd_Tpr_M_BowFix.7z", ["bow"])
     ];
-    fillerTail("Nomad Troopers", "nomtRow", nom_troopers, "#bowFill");
+    fillerTail("Nomad Troopers", "nomTRow", nom_troopers, "#bowFill");
 };
 
 function rangerFiller() {
-    var ranPath = imgPath + "bow/ranger/";
+    var ranPath = imgPath + "bows/ranger/";
 
     var rangers = [
-        ranFL = new Anim("Ranger F + Lance", ranPath + "f_l", "Ranger_F_Lnc.7z"),
-        ranFR = new Anim("Ranger Rebecca", ranPath + "f_reb", "Ranger_Rebecca.7z"),
-        ranFT = new Anim("Ranger F Twintails", ranPath + "f_tt", "Ranger_F_TT.7z"),
-        ranML = new Anim("Ranger M + Lance", ranPath + "m_l", "Ranger_M_Lnc.7z")
+        ranFL = new Anim("Ranger F + Lance", ranPath + "f_l", "Ranger_F_Lnc.7z", ["bow", "sword", "lance"]),
+        ranFR = new Anim("Ranger Rebecca", ranPath + "f_reb", "Ranger_Rebecca.7z", ["bow", "sword"], "Teraspark"),
+        ranFT = new Anim("Ranger F Twintails", ranPath + "f_tt", "Ranger_F_TT.7z", ["bow", "sword"], "GoofyfanG56"),
+        ranML = new Anim("Ranger M + Lance", ranPath + "m_l", "Ranger_M_Lnc.7z", ["bow", "sword", "lance"], "Skitty, Feaw")
     ];
     fillerTail("Ranger", "rangRow", rangers, "#bowFill");
 };
 
 function sniperFiller() {
-    var snipPath = imgPath + "bow/sniper/";
+    var snipPath = imgPath + "bows/sniper/";
 
     var snipers = [
-        sniF6 = new Anim("Sniper F FE6", snipPath + "f_e6", "Sniper_F_FE6.7z"),
-        sniF = new Anim("Sniper F", snipPath + "f", "Sniper_F.7z"),
-        sniFQ = new Anim("Sniper F Quiver", snipPath + "f_quiv_reb", "Sniper_F_Quiv.7z"),
-        sniFQR = new Anim("Sniper Rebecca Quiver", snipPath + "f_quiv_reb", "Sniper_Reb_Quiv.7z"),
-        sniFR = new Anim("Sniper Rebecca", snipPath + "f_reb", "Sniper_Rebecca.7z"),
-        huntM = new Anim("Hunter M", snipPath + "hunt", "Hunter.7z"),
-        sniM6 = new Anim("Sniper M FE6", snipPath + "m_e6", "Sniper_M_FE6.7z"),
-        sniM = new Anim("Sniper M", snipPath + "m", "Sniper_M.7z"),
-        sniMH = new Anim("Sniper M Hat", snipPath + "m_hat", "Sniper_M_Hat.7z"),
-        sniMQG = new Anim("Sniper M Generic + Quiver Nuramon", snipPath + "m_quiv_gen", "Sniper_M_Quiv_Gen.7z"),
-        sniMQ = new Anim("Sniper M Quiver Nuramon", snipPath + "m_quiv", "Sniper_M_Quiv.7z"),
-        sniMWi = new Anim("Sniper Wil", snipPath + "m_wil", "Sniper_M_Wil.7z")
+        sniF6 = new Anim("Sniper F FE6", snipPath + "f_e6", "Sniper_F_FE6.7z", ["bow"], "IS"),
+        sniF = new Anim("Sniper F", snipPath + "f", "Sniper_F.7z", ["bow"], "IS"),
+        sniFQ = new Anim("Sniper F Quiver", snipPath + "f_quiv_reb", "Sniper_F_Quiv.7z", ["bow"], "Nuramon"),
+        sniFQR = new Anim("Sniper Rebecca Quiver", snipPath + "f_quiv_reb", "Sniper_Reb_Quiv.7z", ["bow"], "Nuramon, Temp"),
+        sniFR = new Anim("Sniper Rebecca", snipPath + "f_reb", "Sniper_Rebecca.7z", ["bow"], "Temp, Wan"),
+        huntM = new Anim("Hunter M", snipPath + "hunt", "Hunter.7z", ["bow"], "Deranger"),
+        sniM6 = new Anim("Sniper M FE6", snipPath + "m_e6", "Sniper_M_FE6.7z", ["bow"], "IS"),
+        sniM = new Anim("Sniper M", snipPath + "m", "Sniper_M.7z", ["bow"], "IS"),
+        sniMH = new Anim("Sniper M Hat", snipPath + "m_hat", "Sniper_M_Hat.7z", ["bow"], "Swain"),
+        sniMQG = new Anim("Sniper M Generic + Quiver Nuramon", snipPath + "m_quiv_gen", "Sniper_M_Quiv_Gen.7z", ["bow"], "Nuramon, Swain"),
+        sniMQ = new Anim("Sniper M Quiver Nuramon", snipPath + "m_quiv", "Sniper_M_Quiv.7z", ["bow"], "Nuramon"),
+        sniMWi = new Anim("Sniper Wil", snipPath + "m_wil", "Sniper_M_Wil.7z", ["bow"], "Greentea, DerTheVaporeon")
     ];
     fillerTail("Sniper", "snipRow", snipers, "#bowFill");
 };
+
+
 
 ///END FUNCTIONS///
 
@@ -736,7 +739,7 @@ $(".nav-link").click(function () {
             $("#bowFill").toggle();
             if (!bowD) {
                 bowD = true;
-                var bowOpts = ["Archer", "Ballistae", "Lyn-Archer", "Nomad", "Nomad Trooper", "Ranger", "Sniper"];
+                var bowOpts = ["Archer", "Ballistae", "Nomad", "Nomad Trooper", "Ranger", "Sniper"];
                 animOptions(bowOpts, "Bow Units", "#bowFill");
             };
             break;
